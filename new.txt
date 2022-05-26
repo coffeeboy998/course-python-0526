@@ -1,0 +1,67 @@
+# 取得檔名 或 路徑末端
+# RT0/1/NO4. RT-15-1.bmp -> 'NO4. RT-15-1.bmp'
+os.path.basename()
+
+# 將文件路徑和文件名分開
+# RT0/1/NO4. RT-15-1.bmp -> ('RT0/1', 'NO4. RT-15-1.bmp')
+os.path.split()
+
+# 將文件名和副檔名分開
+# RT0/1/NO4. RT-15-1.bmp -> ('RT0/1/NO4. RT-15-1', '.bmp')
+os.path.splitext()
+
+# 取得指定副檔名的檔案列表
+# 返回所有匹配的檔路徑清單 (list)
+# 包含完整路徑
+gt_file_list = glob.glob(os.path.join(data_dir, "*.xml"))
+
+# 遞迴列出所有檔案的絕對路徑
+for root, dirs, files in os.walk(data_dir):
+    print(f'root = {root}')
+    print(f'dirs = {dirs}')
+    print(f'files
+# 取得當前目錄的上一層目錄
+# 返回 完整路徑
+os.path.abspath(os.path.join(src_dir, os.pardir))
+
+# 取得當前目錄的上一層目錄
+# 返回 完整路徑
+os.path.dirname(src_dir)
+
+# 取得所有檔案與子目錄名稱
+# 只包含檔案名稱
+files = listdir(data_dir)
+
+# 取得父目錄名稱
+# 返回 非完整路徑 名稱
+os.path.basename(os.path.dirname(src_dir))
+
+// 獲取當前目錄
+print(os.getcwd())
+print(os.path.abspath(os.path.dirname(__file__)))
+
+// 獲取上級目錄
+print(os.path.abspath(os.path.dirname(os.path.dirname(__file__))))
+print(os.path.abspath(os.path.dirname(os.getcwd())))
+print(os.path.abspath(os.path.join(os.getcw
+# 中間目錄不存在會報錯
+# 終端目錄已經在會報錯
+os.mkdir()
+
+# 終端目錄存在會報錯
+os.makedirs()
+
+# 檢查目錄不存在，直接遞迴建立(含整個路徑的所有目錄)
+if not os.path.exists(config.model_path):
+    os.makedirs(config.model_path)
+
+# 複製目錄 (連同裡面的檔案)
+shutil.copytree(src, dst)
+
+shutil.copy(src, dst)
+shutil.copy2(src, dst)
+shutil.copyfile(src, dst)
+
+# 更改目錄名稱
+# 搬移檔案 或 目錄
+shutil.move(src, dst)
